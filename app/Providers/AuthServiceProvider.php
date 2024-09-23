@@ -23,12 +23,6 @@ class AuthServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->registerPolicies();
 
-        Gate::define('admin', function ($user) {
-            $admins_id = explode(',', config('alertas.admin'));
-            dd($admins_id);
-            return in_array($user->codpes, $admins_id);
-        });
     }
 }
